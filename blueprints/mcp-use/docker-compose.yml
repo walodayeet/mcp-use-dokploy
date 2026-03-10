@@ -1,0 +1,29 @@
+services:
+  mcp-use:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+      - "8085:8080"
+    environment:
+      - NODE_ENV=production
+      # MCP server port — your MCP clients connect here (/mcp endpoint)
+      - PORT=3000
+      - HOST=0.0.0.0
+      # Inspector dashboard port
+      - INSPECTOR_PORT=8080
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3000/mcp" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    volumes:
+      # Mount your own server code here to replace the default stub:
+      # - ./my-server:/app/server
+      - mcp-use-data:/app/.mcp-use
+
+volumes:
+  mcp-use-data:

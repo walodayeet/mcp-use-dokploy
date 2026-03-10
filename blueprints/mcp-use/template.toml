@@ -1,0 +1,21 @@
+[variables]
+# Domain for the MCP Inspector dashboard UI
+inspector_domain = "${domain}"
+# Domain for the MCP server endpoint (used by MCP clients like Claude, Cursor)
+mcp_domain = "${domain}"
+
+[config]
+
+# Inspector dashboard – open this URL in your browser
+[[config.domains]]
+serviceName = "mcp-use"
+port = 8080
+host = "${inspector_domain}"
+path = "/"
+
+# MCP server endpoint – connect MCP clients to https://<mcp_domain>/mcp
+[[config.domains]]
+serviceName = "mcp-use"
+port = 3000
+host = "${mcp_domain}"
+path = "/mcp"

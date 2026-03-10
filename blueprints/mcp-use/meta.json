@@ -1,0 +1,19 @@
+{
+  "id": "mcp-use",
+  "name": "MCP Use Inspector",
+  "version": "latest",
+  "description": "MCP Use Inspector is a modern dashboard UI for inspecting and debugging remote MCP (Model Context Protocol) servers. Test tools, resources, prompts, and chat with your MCP servers in a beautiful web interface.",
+  "logo": "logo.svg",
+  "links": {
+    "github": "https://github.com/mcp-use/inspector",
+    "website": "https://mcp-use.com",
+    "docs": "https://mcp-use.com/docs"
+  },
+  "tags": [
+    "ai",
+    "mcp",
+    "developer-tools",
+    "dashboard",
+    "inspector"
+  ]
+}

@@ -1,0 +1,8 @@
+# Dokploy Template – mcp-use
+node_modules/
+.mcp-use/
+dist/
+*.log
+.env
+.env.*
+!.env.example
