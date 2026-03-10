@@ -10,7 +10,7 @@
  * Connect your MCP client (Claude, Cursor, etc.) using that URL.
  */
 
-import { MCPServer, tool } from "mcp-use/server";
+import { MCPServer } from "mcp-use/server";
 import { z } from "zod";
 
 const server = new MCPServer({
