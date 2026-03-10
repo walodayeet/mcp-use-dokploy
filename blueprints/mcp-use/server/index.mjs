@@ -21,9 +21,11 @@ const server = new MCPServer({
 
 // ── Example tool: echo ────────────────────────────────────────────────────────
 server.tool(
-  "echo",
-  "Echoes back the provided message",
-  { message: z.string().describe("The message to echo back") },
+  {
+    name: "echo",
+    description: "Echoes back the provided message",
+    schema: z.object({ message: z.string().describe("The message to echo back") })
+  },
   async ({ message }) => ({
     content: [{ type: "text", text: `Echo: ${message}` }],
   })
@@ -31,9 +33,10 @@ server.tool(
 
 // ── Example tool: get_time ────────────────────────────────────────────────────
 server.tool(
-  "get_time",
-  "Returns the current UTC time",
-  {},
+  {
+    name: "get_time",
+    description: "Returns the current UTC time"
+  },
   async () => ({
     content: [{ type: "text", text: new Date().toUTCString() }],
   })
